@@ -1,0 +1,27 @@
+ENV_UNI=(
+    "EMAIL"             "evgeni.golov@uni-duesseldorf.de"
+)
+
+ENV_UNIBONN=(
+    "EMAIL"             "golov@cs.uni-bonn.de"
+)
+ 
+ENV_DEBIAN=(
+    "EMAIL"             "evgeni@debian.org"
+)
+
+ENV_DEFAULT=(
+    "EMAIL"             "evgeni@golov.de"
+    "DEBEMAIL"          "evgeni@debian.org"
+)
+
+# Configure profile mappings
+zstyle ':chpwd:profiles:/home/evgeni/Uni/Bonn*' profile unibonn
+zstyle ':chpwd:profiles:/home/evgeni/Uni*' profile uni
+zstyle ':chpwd:profiles:/home/evgeni/Debian*' profile debian
+
+# It requires to add a chpwd function or extend it:
+function chpwd() {
+  switch_environment_profiles
+}
+

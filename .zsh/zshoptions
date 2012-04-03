@@ -1,0 +1,7 @@
+# options sourced by ~/.zshrc
+
+setopt sharehistory		# shares history between shells
+setopt histignorealldups 	# removes copies of lines still in the history list, keeping the newly added one
+setopt autocd			# change dirs without cd
+setopt correct			# correct commands
+setopt autopushd		# Automatically push directories

@@ -1,0 +1,17 @@
+# simple functions sourced by ~/.zshrc
+# try to keep these things clean :S
+
+# make updating the environment after an
+# emerge/whatever easy...
+srcenv(){
+  if [[ -r /etc/zsh/zprofile ]]; then
+    . /etc/zsh/zprofile
+    print 'sourced: /etc/zsh/zprofile'
+  fi
+  if [[ -r ~/.zshrc ]]; then
+    . ~/.zshrc
+    print 'sourced: ~/.zshrc'
+  fi
+  print 'environment updated successful'
+}
+

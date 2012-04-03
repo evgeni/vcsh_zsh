@@ -1,0 +1,51 @@
+# environment variables sourced by ~/.zshrc
+
+# zsh specific variables
+# History stuff
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.history
+
+# Size of directory stack
+DIRSTACKSIZE=30
+
+#setting prompt
+if [[ $EUID != 0 ]]; then
+  PS1="%{%B${fg[yellow]}%}%T %{${fg[green]}%}%n@%M%{${fg[red]}%}%(0?.. !) %{${fg[blue]}%}%1~ %# %{${fg[default]}%b%}"
+else
+  PS1="%B%{${fg[red]}%}%M %{${fg[blue]}%}%1~ %# %{${fg[default]}%b%}"
+fi
+
+# Gentoo specific stuff needed to emerge some packages
+[[ $EUID = 0 && -f /etc/gentoo-release ]] && export KERNEL_DIR=/usr/src/linux-$(uname -r)
+
+# some common variables 
+if [ -z $DISPLAY ]; then
+	export BROWSER='lynx'
+else
+	export BROWSER='iceweasel'
+fi
+export EDITOR='nano -w'
+
+# exporting LC_CTYPE for UTF-8 support
+#export LC_CTYPE="de_DE.UTF-8"
+#export LC_MESSAGES=C
+
+# expand path with local bindir
+[[ -d "$HOME/bin" ]] &&  export PATH="$PATH:$HOME/bin"
+
+# eval dircolors for ls, dir, etc...
+[[ -r /etc/DIRCOLORS ]] && eval $(dircolors /etc/DIRCOLORS) || eval $(dircolors)
+
+export CONCURRENCY_LEVEL=2
+
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+export EMAIL=sargentd@die-welt.net
+export DEBEMAIL=evgeni@debian.org

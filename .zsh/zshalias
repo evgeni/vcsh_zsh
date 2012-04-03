@@ -1,0 +1,53 @@
+# custom aliases sourced by ~/.zshrc
+
+# aliases for directory listings
+alias ls='ls -l -F --color'
+alias dir='dir -F --color'
+alias ll='ls -al -F --color'
+
+#foo
+#alias man='LANG=C man'
+
+# only nonroot need these aliases
+if [[ EUID != 0 ]]; then
+  # alias for ifconfig, as /sbin is not in $path
+  [[ -e /sbin/ifconfig ]] && alias ifconfig='/sbin/ifconfig'
+  # same for ip and ss
+  [[ -e /sbin/ip ]] && alias ip='/sbin/ip'
+  [[ -e /sbin/ss ]] && alias ss='/sbin/ss'
+  # [[ -e $(which ftp) ]] && alias ftp='ftp -iz nossl'
+  
+  # Teamspeak alias for oss emulation
+  [[ -e /opt/bin/TeamSpeak && -e =aoss ]] && alias teamspeak='aoss /opt/bin/TeamSpeak'
+  
+  # some program-specific aliases to make things easier for me
+  [[ -e $(which audiotag) ]] && \
+    alias autotag="audiotag --title-pattern='.*/.*/\d\d - (.*)\.[ogg|mp3]' \
+      --track-pattern='.*/.*/(\d\d).*\.[ogg|mp3]' --artist-pattern='(.*)/.*/.*\.[ogg|mp3]' \
+      --album-pattern='.*/(.*)/.*\.[ogg|mp3]'"
+
+  # glob aliases; imho too dangerous to use as root.
+  alias -g T="tail -n 25" 
+  alias -g L="less"
+fi
+
+# make dirchanges easy ( taken from strcat ;> )
+# WARNING: This only works with autocd set!
+alias ...='../..'
+alias ....='../../..'
+alias .....='../../../..'
+
+# suffix aliases (requires zsh >= 4.2.0) so watch out
+# some file suffixes
+alias -s {c,cpp,h,hpp}=${EDITOR:-vi}		# c/cpp files
+alias -s {txt,conf}=${EDITOR:-vi}		# txt and configuration stuff
+alias -s {htm,php,html}=${BOWSER:-links2}
+alias -s {de,at,com,net,info,org}=${BROWSER:-links2}	# suffix for all that URI stuff....
+alias -s {jpg,png,gif}=fbi			# Imageviewer
+alias -s pdf=fbgs				# PDF to image converter for fbi
+
+alias grep='grep --color=always'
+alias svn-clean="svn status |grep ^\? |awk '{print $2}' |xargs rm -rf"
+
+# simple webserver
+alias http="python -m SimpleHTTPServer"
