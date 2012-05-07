@@ -50,4 +50,4 @@ alias grep='grep --color=always'
 alias svn-clean="svn status |grep ^\? |awk '{print $2}' |xargs rm -rf"
 
 # simple webserver
-alias http="python -m SimpleHTTPServer"
+alias httpd="python -m SimpleHTTPServer"
