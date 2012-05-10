@@ -10,6 +10,10 @@ ENV_DEBIAN=(
     "EMAIL"             "evgeni@debian.org"
 )
 
+ENV_GRML=(
+    "EMAIL"             "evgeni@grml.org"
+)
+
 ENV_DEFAULT=(
     "EMAIL"             "evgeni@golov.de"
     "DEBEMAIL"          "evgeni@debian.org"
@@ -18,6 +22,7 @@ ENV_DEFAULT=(
 # Configure profile mappings
 zstyle ':chpwd:profiles:/home/evgeni/Uni/Bonn*' profile unibonn
 zstyle ':chpwd:profiles:/home/evgeni/Uni*' profile uni
+zstyle ':chpwd:profiles:/home/evgeni/Debian/grml*' profile grml
 zstyle ':chpwd:profiles:/home/evgeni/Debian*' profile debian
 
 # It requires to add a chpwd function or extend it:
