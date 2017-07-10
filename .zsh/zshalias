@@ -20,12 +20,6 @@ if [[ EUID != 0 ]]; then
   # Teamspeak alias for oss emulation
   [[ -e /opt/bin/TeamSpeak && -e =aoss ]] && alias teamspeak='aoss /opt/bin/TeamSpeak'
   
-  # some program-specific aliases to make things easier for me
-  [[ -e $(which audiotag) ]] && \
-    alias autotag="audiotag --title-pattern='.*/.*/\d\d - (.*)\.[ogg|mp3]' \
-      --track-pattern='.*/.*/(\d\d).*\.[ogg|mp3]' --artist-pattern='(.*)/.*/.*\.[ogg|mp3]' \
-      --album-pattern='.*/(.*)/.*\.[ogg|mp3]'"
-
   # glob aliases; imho too dangerous to use as root.
   alias -g T="tail -n 25" 
   alias -g L="less"

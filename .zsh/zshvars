@@ -20,12 +20,7 @@ fi
 [[ $EUID = 0 && -f /etc/gentoo-release ]] && export KERNEL_DIR=/usr/src/linux-$(uname -r)
 
 # some common variables 
-if [ -z $DISPLAY ]; then
-	export BROWSER='lynx'
-else
-	export BROWSER='iceweasel'
-fi
-export EDITOR='nano -w'
+export EDITOR='vim'
 
 # exporting LC_CTYPE for UTF-8 support
 #export LC_CTYPE="de_DE.UTF-8"
