@@ -41,4 +41,11 @@ NO_COLOUR="%{${reset_color}%}"
 zstyle ':vcs_info:*' actionformats "${MAGENTA}(${NO_COLOUR}%s${MAGENTA})${YELLOW}-${MAGENTA}[${GREEN}%b${YELLOW}|${RED}%a%u%c${MAGENTA}]${NO_COLOUR} " "zsh: %r"
 zstyle ':vcs_info:*' formats       "${MAGENTA}(${NO_COLOUR}%s${MAGENTA})${YELLOW}-${MAGENTA}[${GREEN}%b%u%c${MAGENTA}]${NO_COLOUR}%} " "zsh: %r"
 
+function virtual_env_prompt () {
+    REPLY=${VIRTUAL_ENV+(${VIRTUAL_ENV:t}) }
+}
+grml_theme_add_token virtual-env -f virtual_env_prompt '%F{magenta}' '%f'
+
+zstyle ':prompt:grml:left:setup' items rc virtual-env change-root user at host remote path vcs percent
+
 PROMPT="%{%B${YELLOW}%}%T ${RED}${EXITCODE}${WHITE}${debian_chroot:+($debian_chroot)}${GREEN}%n${GREEN}@%m${NO_COLOUR} %40<...<%B%~%b%<< "'${vcs_info_msg_0_}'"%# "
