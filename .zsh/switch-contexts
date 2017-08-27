@@ -24,6 +24,7 @@ zstyle ':chpwd:profiles:/home/evgeni/Uni/Bonn*' profile unibonn
 zstyle ':chpwd:profiles:/home/evgeni/Uni*' profile uni
 zstyle ':chpwd:profiles:/home/evgeni/Debian/grml*' profile grml
 zstyle ':chpwd:profiles:/home/evgeni/Debian*' profile debian
+zstyle ':chpwd:profiles:/home/evgeni/Grml*' profile grml
 
 # It requires to add a chpwd function or extend it:
 function chpwd() {
