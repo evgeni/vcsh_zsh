@@ -2,10 +2,10 @@ ENV_UNI=(
     "EMAIL"             "evgeni.golov@uni-duesseldorf.de"
 )
 
-ENV_UNIBONN=(
-    "EMAIL"             "golov@cs.uni-bonn.de"
+ENV_REDHAT=(
+    "EMAIL"             "evgeni@redhat.com"
 )
- 
+
 ENV_DEBIAN=(
     "EMAIL"             "evgeni@debian.org"
 )
@@ -20,11 +20,11 @@ ENV_DEFAULT=(
 )
 
 # Configure profile mappings
-zstyle ':chpwd:profiles:/home/evgeni/Uni/Bonn*' profile unibonn
 zstyle ':chpwd:profiles:/home/evgeni/Uni*' profile uni
 zstyle ':chpwd:profiles:/home/evgeni/Debian/grml*' profile grml
 zstyle ':chpwd:profiles:/home/evgeni/Debian*' profile debian
 zstyle ':chpwd:profiles:/home/evgeni/Grml*' profile grml
+zstyle ':chpwd:profiles:/home/remote/egolov/RedHat*' profile redhat
 
 # It requires to add a chpwd function or extend it:
 function chpwd() {
