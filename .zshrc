@@ -54,7 +54,9 @@ bindkey "^[[2~" yank			# Ins
 [[ -r ~/.zsh/switch-contexts ]] && . ~/.zsh/switch-contexts
 
 # make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
+if [ -x /usr/bin/lesspipe ]; then
+  eval "$(lesspipe)"
+fi
 
 # update dotfiles
 #cd ~/dotfiles && git pull
