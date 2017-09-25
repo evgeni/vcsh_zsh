@@ -20,11 +20,11 @@ ENV_DEFAULT=(
 )
 
 # Configure profile mappings
-zstyle ':chpwd:profiles:/home/evgeni/Uni*' profile uni
-zstyle ':chpwd:profiles:/home/evgeni/Debian/grml*' profile grml
-zstyle ':chpwd:profiles:/home/evgeni/Debian*' profile debian
-zstyle ':chpwd:profiles:/home/evgeni/Grml*' profile grml
-zstyle ':chpwd:profiles:/home/remote/egolov/RedHat*' profile redhat
+zstyle ':chpwd:profiles:/home/**/Uni*' profile uni
+zstyle ':chpwd:profiles:/home/**/Grml*' profile grml
+zstyle ':chpwd:profiles:/home/**/Debian/grml*' profile grml
+zstyle ':chpwd:profiles:/home/**/Debian*' profile debian
+zstyle ':chpwd:profiles:/home/**/RedHat*' profile redhat
 
 # It requires to add a chpwd function or extend it:
 function chpwd() {
