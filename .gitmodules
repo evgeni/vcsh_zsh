@@ -1,0 +1,6 @@
+[submodule ".zsh/grml-etc-core"]
+	path = .zsh/grml-etc-core
+	url = https://github.com/grml/grml-etc-core.git
+[submodule ".zsh/aptituz-zsh"]
+	path = .zsh/aptituz-zsh
+	url = https://github.com/aptituz/zsh.git
