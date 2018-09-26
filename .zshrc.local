@@ -51,7 +51,7 @@ zstyle ':prompt:grml:left:setup' items rc virtual-env change-root user at host r
 PROMPT="%{%B${YELLOW}%}%T ${RED}${EXITCODE}${WHITE}${debian_chroot:+($debian_chroot)}${GREEN}%n${GREEN}@%m${NO_COLOUR} %40<...<%B%~%b%<< "'${vcs_info_msg_0_}'"%# "
 
 export GRML_NO_APT_ALIASES=1
-export SSH_AUTH_SOCK=/run/user/$(id -u)/gnupg/S.gpg-agent.ssh
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 
 autoload -U bashcompinit
 bashcompinit
