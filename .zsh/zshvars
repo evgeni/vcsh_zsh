@@ -19,7 +19,7 @@ fi
 # Gentoo specific stuff needed to emerge some packages
 [[ $EUID = 0 && -f /etc/gentoo-release ]] && export KERNEL_DIR=/usr/src/linux-$(uname -r)
 
-# some common variables 
+# some common variables
 export EDITOR='vim'
 
 # exporting LC_CTYPE for UTF-8 support
@@ -27,7 +27,7 @@ export EDITOR='vim'
 #export LC_MESSAGES=C
 
 # expand path with local bindir
-[[ -d "$HOME/bin" ]] &&  export PATH="$PATH:$HOME/bin"
+[[ -d "$HOME/bin" ]] &&  export PATH="$HOME/bin:$PATH"
 
 # eval dircolors for ls, dir, etc...
 [[ -r /etc/DIRCOLORS ]] && eval $(dircolors /etc/DIRCOLORS) || eval $(dircolors)
