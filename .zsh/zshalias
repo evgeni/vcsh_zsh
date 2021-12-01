@@ -15,13 +15,9 @@ if [[ EUID != 0 ]]; then
   # same for ip and ss
   [[ -e /sbin/ip ]] && alias ip='/sbin/ip'
   [[ -e /sbin/ss ]] && alias ss='/sbin/ss'
-  # [[ -e $(which ftp) ]] && alias ftp='ftp -iz nossl'
-  
-  # Teamspeak alias for oss emulation
-  [[ -e /opt/bin/TeamSpeak && -e =aoss ]] && alias teamspeak='aoss /opt/bin/TeamSpeak'
-  
+
   # glob aliases; imho too dangerous to use as root.
-  alias -g T="tail -n 25" 
+  alias -g T="tail -n 25"
   alias -g L="less"
 fi
 
@@ -35,13 +31,10 @@ alias .....='../../../..'
 # some file suffixes
 alias -s {c,cpp,h,hpp}=${EDITOR:-vi}		# c/cpp files
 alias -s {txt,conf}=${EDITOR:-vi}		# txt and configuration stuff
-alias -s {htm,php,html}=${BOWSER:-links2}
-alias -s {de,at,com,net,info,org}=${BROWSER:-links2}	# suffix for all that URI stuff....
 alias -s {jpg,png,gif}=fbi			# Imageviewer
 alias -s pdf=fbgs				# PDF to image converter for fbi
 
 alias grep='grep --color=always'
-alias svn-clean="svn status |grep ^\? |awk '{print $2}' |xargs rm -rf"
 
 # simple webserver
 alias httpd="python -m SimpleHTTPServer"
