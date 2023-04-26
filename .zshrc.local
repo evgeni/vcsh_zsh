@@ -50,6 +50,9 @@ zstyle ':prompt:grml:left:setup' items rc virtual-env change-root user at host r
 
 PROMPT="%{%B${YELLOW}%}%T ${RED}${EXITCODE}${WHITE}${debian_chroot:+($debian_chroot)}${GREEN}%n${GREEN}@%m${NO_COLOUR} %40<...<%B%~%b%<< "'${vcs_info_msg_0_}'"%# "
 
+# https://docs.python-guide.org/dev/pip-virtualenv/
+export PIP_REQUIRE_VIRTUALENV=true
+
 export GRML_NO_APT_ALIASES=1
 
 if [ -z "$SSH_AUTH_SOCK" ]; then
