@@ -56,6 +56,8 @@ function rbenv_prompt () {
     REPLY=${RBENV_VERSION+(${RBENV_PROMPT_PREFIX}${RBENV_VERSION:t}) }
   elif [[ -n "${RBENV_LOCAL_VERSION}" ]]; then
     REPLY=${RBENV_LOCAL_VERSION+(${RBENV_PROMPT_PREFIX}${RBENV_LOCAL_VERSION:t}) }
+  else
+    REPLY=""
   fi
 }
 grml_theme_add_token rbenv -f rbenv_prompt '%F{red}' '%f'
