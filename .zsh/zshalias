@@ -37,4 +37,4 @@ alias -s pdf=fbgs				# PDF to image converter for fbi
 alias grep='grep --color=always'
 
 # simple webserver
-alias httpd="python -m SimpleHTTPServer"
+alias httpd="python3 -m http.server"
