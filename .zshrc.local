@@ -88,9 +88,8 @@ export PIP_REQUIRE_VIRTUALENV=true
 
 export GRML_NO_APT_ALIASES=1
 
-if [ -z "$SSH_AUTH_SOCK" ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-fi
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 
 autoload -U bashcompinit
 bashcompinit
+
