@@ -2,8 +2,8 @@
 
 # zsh specific variables
 # History stuff
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=5000
+SAVEHIST=10000
 HISTFILE=~/.history
 
 # Size of directory stack
