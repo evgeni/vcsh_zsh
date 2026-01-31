@@ -38,3 +38,10 @@ alias grep='grep --color=always'
 
 # simple webserver
 alias httpd="python3 -m http.server"
+
+# claude
+alias claude='podman run --rm -ti --security-opt label=disable --volume "${HOME}/.config/gcloud:/root/.config/gcloud" --volume "$(pwd):/app" --env-file ~/Devel/claude-container/claude.env claude claude'
+
+# yt-dlp
+alias yt-dlp-all="yt-dlp --sub-langs all --embed-subs --audio-multistreams --prefer-free-formats --format 'bv*+mergeall[vcodec=none]'"
+alias yt-dlp-playlist="yt-dlp --preset-alias mp3 --output '%(playlist_index)s-%(title)s.%(ext)s'"
