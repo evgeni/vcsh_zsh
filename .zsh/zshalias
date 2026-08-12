@@ -50,4 +50,8 @@ alias yt-dlp-all="yt-dlp --sub-langs all --embed-subs --audio-multistreams --pre
 alias yt-dlp-playlist="yt-dlp --preset-alias mp3 --output '%(playlist_index)s-%(title)s.%(ext)s'"
 
 # prefer vim, even when I am lazy
+if [[ -x /usr/bin/nvim ]]; then
+  alias vim=nvim
+  export EDITOR=nvim
+fi
 alias vi=vim
