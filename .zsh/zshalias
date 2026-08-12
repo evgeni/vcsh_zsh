@@ -27,6 +27,9 @@ alias ...='../..'
 alias ....='../../..'
 alias .....='../../../..'
 
+# fzf search with autopushd
+alias cdf='cd $(dirs -lp | fzf)'
+
 # suffix aliases (requires zsh >= 4.2.0) so watch out
 # some file suffixes
 alias -s {c,cpp,h,hpp}=${EDITOR:-vi}		# c/cpp files
